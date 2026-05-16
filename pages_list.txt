@@ -1,0 +1,15 @@
+src/pages/ActorProfile.tsx
+src/pages/AdminDashboard.tsx
+src/pages/Dashboard.tsx
+src/pages/ForgotPassword.tsx
+src/pages/Index.tsx
+src/pages/Login.tsx
+src/pages/MyDramaListPublic.tsx
+src/pages/News.tsx
+src/pages/NotFound.tsx
+src/pages/Profile.tsx
+src/pages/ResetPassword.tsx
+src/pages/Signup.tsx
+src/pages/Social.tsx
+src/pages/TopRated.tsx
+src/pages/UserProfile.tsx
