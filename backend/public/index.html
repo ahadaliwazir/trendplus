@@ -106,5 +106,20 @@
     </main>
 
     <script src="main.js"></script>
+    <script>
+        // Kill the old MeriDramaList Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+        }
+        // Force clear cache if it looks like the old site
+        if (localStorage.getItem('theme')) {
+            localStorage.clear();
+            sessionStorage.clear();
+        }
+    </script>
 </body>
 </html>
